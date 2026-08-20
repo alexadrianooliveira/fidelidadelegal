@@ -1,0 +1,14 @@
+# Sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vs/
+.vscode/
+*.swp
+*~
+
+# Postman - nunca versionar environments com credenciais preenchidas
+*.local.postman_environment.json
+*Producao*.postman_environment.json
