@@ -54,6 +54,9 @@ Um parceiro que implemente os **8 endpoints** abaixo exatamente como descrito en
 - **Content-Type:** `multipart/form-data` nas transações, na consulta e no `client_partner`; JSON no Login e no `client_partner_cancel`.
 - **Chave do consumidor:** `uniqueId` = CPF somente números (o parceiro pode ser multichave, mas o CPF é obrigatório).
 - **Identificação da loja:** `source` = nome da loja, `location` = CNPJ somente números.
+  **O CNPJ não é chave da loja:** é comum duas ou mais lojas do mesmo cliente terem o mesmo CNPJ. A loja é identificada
+  pelo token do Login dela (cada filial tem o próprio login, criado no `client_partner`) e, no cadastro, pelo `licenca`
+  (código da filial, único no PDV Legal). Use o `location` só como informação.
 - **Valores:** decimal com 2 casas, separador **ponto** (`1234.56`).
 - **Booleanos:** `true` / `false` minúsculos.
 - **Envelope de erro:** HTTP 422 com `{ "status": "<codigo>", "error": "<mensagem>" }`, **inclusive para erro de validação de campo**.
